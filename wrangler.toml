@@ -1,9 +1,11 @@
 name = "incite-automation"
 compatibility_date = "2024-06-06"
+account id=3aa546aeeef5361427c156759324c99c
+zone id=1fccac66a2957402b9212920903e5147
 type="javascript"
 
 [triggers]
-routes = ["https://incite-automation.com/*"]
+routes = ["incite-automation.com/*"]
 
 # Optional: If you're using Astro
 [build]
