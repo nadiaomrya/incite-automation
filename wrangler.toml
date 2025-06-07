@@ -3,7 +3,7 @@ compatibility_date = "2024-06-06"
 type="javascript"
 
 [triggers]
-routes = ["incite-automation.com/*"]
+routes = ["https://incite-automation.com/*"]
 
 # Optional: If you're using Astro
 [build]
