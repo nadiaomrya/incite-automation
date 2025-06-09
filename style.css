@@ -1,0 +1,200 @@
+/* Global Styles from Layout.astro */
+html {
+  height: 100%;
+}
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  font-family: 'Special Elite', monospace;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #ccc;
+  background-color: #000;
+}
+h1 {
+  font-family: 'Unica One', sans-serif;
+  color: #fff;
+}
+.main-nav {
+  background: rgba(10, 10, 10, 0.7);
+  backdrop-filter: blur(5px);
+  padding: 0.5rem 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  box-sizing: border-box;
+}
+.main-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+.main-nav a {
+  font-family: 'Unica One', sans-serif;
+  color: #ccc;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 0.5rem 0;
+  transition: color 0.2s;
+}
+.main-nav a:hover,
+.main-nav a.active { 
+  color: #fff;
+  text-shadow: 0 0 5px #fff;
+}
+.main-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-top: 3rem;
+  border-top: 1px solid #222;
+  font-size: 0.9rem;
+  color: #888;
+}
+.main-footer a {
+  color: #aaa;
+  text-decoration: none;
+}
+.main-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Styles from index.astro */
+body.homepage {
+    background: #111;
+    color: #eaeaea;
+    background-image: url('/abstract-bw.png'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    gap: 2rem;
+    z-index: 1;
+    position: relative;
+    background: rgba(17, 17, 17, 0.85);
+    border-radius: 1.5rem;
+    padding: 2.5rem 2rem;
+    box-shadow: 0 4px 32px 0 rgba(0,0,0,0.25);
+}
+.logo-static-bg {
+    width: 240px;
+    height: 240px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: url('/static.gif') repeat;
+    background-size: cover;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    animation: move-static 60s linear infinite;
+}
+.logo {
+    width: 220px;
+    height: auto;
+    z-index: 1;
+    position: relative;
+    filter: drop-shadow(0 0 8px #fff) grayscale(1);
+}
+.headline {
+    font-family: 'Unica One', sans-serif;
+    font-size: 4rem;
+    font-weight: 900;
+    text-align: left;
+    letter-spacing: 0.04em;
+    color: #fff;
+    margin: 0;
+}
+.headline.static-bg {
+    background: url('/static.gif') repeat;
+    background-size: cover;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 0.4;
+    background-clip: text;
+    color: transparent;
+    animation: move-static 60s linear infinite;
+}
+@keyframes move-static {
+    0% { background-position: 0 0; }
+    100% { background-position: 100px 100px; }
+}
+.subtitle {
+    font-family: 'Special Elite', monospace;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #b0b0b0;
+    margin-top: 0.5rem;
+    text-align: left;
+    filter: grayscale(1);
+}
+.edge {
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    filter: grayscale(1);
+    text-shadow: 0 0 4px #000;
+}
+.static-btn {
+    position: fixed;
+    right: 2rem;
+    bottom: 2rem;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2rem;
+    font-family: 'Unica One', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 900;
+    letter-spacing: 0.04em;
+    color: black;
+    background: url('/static.gif') repeat;
+    background-size: cover;
+    border: none;
+    border-radius: 2rem;
+    box-shadow: 0 4px 24px 0 rgba(0,0,0,0.25);
+    cursor: pointer;
+    text-decoration: none;
+    transition: box-shadow 0.2s, transform 0.2s;
+    animation: move-static 60s linear infinite;
+    opacity: 0.85;
+}
+.static-btn:hover {
+    box-shadow: 0 8px 32px 0 rgba(0,0,0,0.35);
+    transform: scale(1.05);
+    opacity: 1;
+}
+
+/* Styles from privacy.astro */
+.page-content {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: rgba(20, 20, 20, 0.8);
+    border-radius: 8px;
+}
+.page-content h1, .page-content h2 {
+    color: #fff;
+    border-bottom: 1px solid #444;
+    padding-bottom: 0.5rem;
+    margin-top: 1.5rem;
+}
+.page-content p, .page-content li {
+    line-height: 1.6;
+    color: #ccc;
+}
