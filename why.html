@@ -28,26 +28,26 @@
     <h2>Smart Irrigation ROI Calculator</h2>
     <p>Calculate the ROI of your irrigation system with our ROI calculator.</p>      <h1>Smart Irrigation ROI Calculator</h1>
     
-      <label>
+    <p><label>
         Acres under irrigation:
-        <input type="number" id="acres" /n>
+        <input type="number" id="acres"</p>
       </label>
-      <label>
+      <p><label>
         Gallons per acre per week:
-        <input type="number" id="gallonsPerAcre" /n>
+        <input type="number" id="gallonsPerAcre" </p>
       </label>
-      <label>
+      <p><label>
         Cost per 1,000 gallons:
-        <input type="number" id="costPerThousand" /n>
+        <input type="number" id="costPerThousand"</p>
       </label>
-      <label>
+      <p><label>
         Weeks in growing season:
-        <input type="number" id="weeks" /n>
+        <input type="number" id="weeks" </p>
       </label>
-      <label>
+      <p><label>
         Estimated water savings (%): <output id="savingsDisplay">15%</output>
         <input type="range" id="savingsPercent" min="5" max="30" value="15" step="1" oninput="document.getElementById('savingsDisplay').textContent = this.value + '%'" />
-      </label>
+      </p></label>
     
       <div class="results">
         <h2>Results</h2>
@@ -80,8 +80,6 @@
           document.getElementById("roi").textContent = moneySaved ? roi : "";
         }
       </script>
-    </body>
-    </html>
     
     <footer class="main-footer">
       <p>&copy; 2024 Incite Automation. All rights reserved.</p>
