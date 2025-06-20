@@ -25,80 +25,64 @@
         <p>To incite growth and drive revenue. We aim to work closely with our partners to streamline their business processes and remove
         barriers to growth by delivering intelligent automation solutions that are easy to adopt.</p>
     </main>
-    <h2>Irrigation ROI Calculator</h2>
-    <p>Calculate the ROI of your irrigation system with our ROI calculator.</p>
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Smart Irrigation ROI Calculator</title>
-  <style>
-    body { font-family: sans-serif; max-width: 600px; margin: auto; padding: 2em; }
-    label { display: block; margin-top: 1em; }
-    input { width: 100%; padding: 0.5em; margin-top: 0.25em; }
-    .results { margin-top: 2em; background: #f4f4f4; padding: 1em; border-radius: 8px; }
-    h2 { color: #006400; }
-  </style>
-</head>
-<body>
-  <h1>Smart Irrigation ROI Calculator</h1>
-
-  <label>
-    Acres under irrigation:
-    <input type="number" id="acres" />
-  </label>
-  <label>
-    Gallons per acre per week:
-    <input type="number" id="gallonsPerAcre" />
-  </label>
-  <label>
-    Cost per 1,000 gallons:
-    <input type="number" id="costPerThousand" />
-  </label>
-  <label>
-    Weeks in growing season:
-    <input type="number" id="weeks" />
-  </label>
-  <label>
-    Estimated water savings (%):
-    <input type="number" id="savingsPercent" />
-  </label>
-
-  <div class="results">
-    <h2>Results</h2>
-    <p><strong>Total Water Use (gal):</strong> <span id="totalWater"></span></p>
-    <p><strong>Gallons Saved:</strong> <span id="gallonsSaved"></span></p>
-    <p><strong>Total Savings ($):</strong> <span id="moneySaved"></span></p>
-    <p><strong>ROI:</strong> <span id="roi"></span></p>
-  </div>
-
-  <script>
-    const inputs = document.querySelectorAll("input");
-    inputs.forEach(input => input.addEventListener("input", calculate));
-
-    function calculate() {
-      const acres = parseFloat(document.getElementById("acres").value) || 0;
-      const gallonsPerAcre = parseFloat(document.getElementById("gallonsPerAcre").value) || 0;
-      const costPerThousand = parseFloat(document.getElementById("costPerThousand").value) || 0;
-      const weeks = parseFloat(document.getElementById("weeks").value) || 0;
-      const savingsPercent = parseFloat(document.getElementById("savingsPercent").value) || 0;
-
-      const totalWater = acres * gallonsPerAcre * weeks;
-      const gallonsSaved = totalWater * (savingsPercent / 100);
-      const costPerGallon = costPerThousand / 1000;
-      const moneySaved = gallonsSaved * costPerGallon;
-      const roi = moneySaved >= 997 ? `${(moneySaved / 997).toFixed(2)}x return` : `Pays for itself in ${(997 / moneySaved).toFixed(1)} seasons`;
-
-      document.getElementById("totalWater").textContent = totalWater.toLocaleString();
-      document.getElementById("gallonsSaved").textContent = gallonsSaved.toLocaleString();
-      document.getElementById("moneySaved").textContent = `$${moneySaved.toFixed(2)}`;
-      document.getElementById("roi").textContent = moneySaved ? roi : "";
-    }
-  </script>
-</body>
-</html>
-
+    <h2>Smart Irrigation ROI Calculator</h2>
+    <p>Calculate the ROI of your irrigation system with our ROI calculator.</p>      <h1>Smart Irrigation ROI Calculator</h1>
+    
+      <label>
+        Acres under irrigation:
+        <input type="number" id="acres" />
+      </label>
+      <label>
+        Gallons per acre per week:
+        <input type="number" id="gallonsPerAcre" />
+      </label>
+      <label>
+        Cost per 1,000 gallons:
+        <input type="number" id="costPerThousand" />
+      </label>
+      <label>
+        Weeks in growing season:
+        <input type="number" id="weeks" />
+      </label>
+      <label>
+        Estimated water savings (%): <output id="savingsDisplay">15%</output>
+        <input type="range" id="savingsPercent" min="5" max="30" value="15" step="1" oninput="document.getElementById('savingsDisplay').textContent = this.value + '%'" />
+      </label>
+    
+      <div class="results">
+        <h2>Results</h2>
+        <p><strong>Total Water Use (gal):</strong> <span id="totalWater"></span></p>
+        <p><strong>Gallons Saved:</strong> <span id="gallonsSaved"></span></p>
+        <p><strong>Total Savings ($):</strong> <span id="moneySaved"></span></p>
+        <p><strong>ROI:</strong> <span id="roi"></span></p>
+      </div>
+    
+      <script>
+        const inputs = document.querySelectorAll("input");
+        inputs.forEach(input => input.addEventListener("input", calculate));
+    
+        function calculate() {
+          const acres = parseFloat(document.getElementById("acres").value) || 0;
+          const gallonsPerAcre = parseFloat(document.getElementById("gallonsPerAcre").value) || 0;
+          const costPerThousand = parseFloat(document.getElementById("costPerThousand").value) || 0;
+          const weeks = parseFloat(document.getElementById("weeks").value) || 0;
+          const savingsPercent = parseFloat(document.getElementById("savingsPercent").value) || 0;
+    
+          const totalWater = acres * gallonsPerAcre * weeks;
+          const gallonsSaved = totalWater * (savingsPercent / 100);
+          const costPerGallon = costPerThousand / 1000;
+          const moneySaved = gallonsSaved * costPerGallon;
+          const roi = moneySaved >= 997 ? `${(moneySaved / 997).toFixed(2)}x return` : `Pays for itself in ${(997 / moneySaved).toFixed(1)} seasons`;
+    
+          document.getElementById("totalWater").textContent = totalWater.toLocaleString();
+          document.getElementById("gallonsSaved").textContent = gallonsSaved.toLocaleString();
+          document.getElementById("moneySaved").textContent = `$${moneySaved.toFixed(2)}`;
+          document.getElementById("roi").textContent = moneySaved ? roi : "";
+        }
+      </script>
+    </body>
+    </html>
+    
     <footer class="main-footer">
       <p>&copy; 2024 Incite Automation. All rights reserved.</p>
       <a href="/privacy.html">Privacy Policy</a>
