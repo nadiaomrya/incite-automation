@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>Incite Automation - Why We Do It</title>
+    <title>Amili AI - Why We Do It</title>
     <link href="https://fonts.googleapis.com/css2?family=Unica+One&family=Special+Elite&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css">
   </head>
@@ -26,72 +26,10 @@
         barriers to growth by delivering intelligent automation solutions that are easy to adopt.</p>
     </main>
     
-    <section id="roi-calculator">
-        <h2>Smart Irrigation ROI Calculator</h2>
-        <p>Calculate the ROI of your irrigation system with our ROI calculator.</p>
-    </section>
-    
-    <form class="roi-calculator">
-      <div class="form-group">
-        <label for="acres">Acres under irrigation:</label>
-        <input type="number" id="acres" name="acres">
-      </div>
-      
-      <div class="form-group">
-        <label for="gallonsPerAcre">Gallons per acre per week:</label>
-        <input type="number" id="gallonsPerAcre" name="gallonsPerAcre">
-      </div>
-      
-      <div class="form-group">
-        <label for="costPerThousand">Cost per 1,000 gallons:</label>
-        <input type="number" id="costPerThousand" name="costPerThousand">
-      </div>
-      
-      <div class="form-group">
-        <label for="weeks">Weeks in growing season:</label>
-        <input type="number" id="weeks" name="weeks">
-      </div>
-      
-      <div class="form-group">
-        <label for="savingsPercent">Estimated water savings (%): <output id="savingsDisplay">15%</output></label>
-        <input type="range" id="savingsPercent" name="savingsPercent" min="5" max="30" value="15" step="1" oninput="document.getElementById('savingsDisplay').textContent = this.value + '%'">
-      </div>
-    </form>
-    
-    <div class="results">
-      <h2>Results</h2>
-      <p><strong>Total Water Use (gal):</strong> <span id="totalWater"></span></p>
-      <p><strong>Gallons Saved:</strong> <span id="gallonsSaved"></span></p>
-      <p><strong>Total Savings ($):</strong> <span id="moneySaved"></span></p>
-      <p><strong>ROI:</strong> <span id="roi"></span></p>
-    </div>
-    
-    <script>
-      const inputs = document.querySelectorAll("input");
-      inputs.forEach(input => input.addEventListener("input", calculate));
-    
-      function calculate() {
-        const acres = parseFloat(document.getElementById("acres").value) || 0;
-        const gallonsPerAcre = parseFloat(document.getElementById("gallonsPerAcre").value) || 0;
-        const costPerThousand = parseFloat(document.getElementById("costPerThousand").value) || 0;
-        const weeks = parseFloat(document.getElementById("weeks").value) || 0;
-        const savingsPercent = parseFloat(document.getElementById("savingsPercent").value) || 0;
-    
-        const totalWater = acres * gallonsPerAcre * weeks;
-        const gallonsSaved = totalWater * (savingsPercent / 100);
-        const costPerGallon = costPerThousand / 1000;
-        const moneySaved = gallonsSaved * costPerGallon;
-        const roi = moneySaved >= 997 ? `${(moneySaved / 997).toFixed(2)}x return` : `Pays for itself in ${(997 / moneySaved).toFixed(1)} seasons`;
-    
-        document.getElementById("totalWater").textContent = totalWater.toLocaleString();
-        document.getElementById("gallonsSaved").textContent = gallonsSaved.toLocaleString();
-        document.getElementById("moneySaved").textContent = `$${moneySaved.toFixed(2)}`;
-        document.getElementById("roi").textContent = moneySaved ? roi : "";
-      }
-    </script>
+   
     
     <footer class="main-footer">
-      <p>&copy; 2024 Incite Automation. All rights reserved.</p>
+      <p>&copy; 2024 Amili AI. All rights reserved.</p>
       <a href="/privacy.html">Privacy Policy</a>
     </footer>
   </body>
